@@ -8,22 +8,19 @@ package Model;
  *
  * @author USER
  */
-public class ServicePerbaikanAC extends ServiceAC {
+public class ServicePerbaikanAC
+        extends ServiceAC {
 
     private String jenisKerusakan;
 
-    public ServicePerbaikanAC(String jenisKerusakan) {
+    public ServicePerbaikanAC(
+            String jenisKerusakan) {
 
-        super("Perbaikan AC", 150000.0);
+        super(
+                "Perbaikan AC",
+                150000.0
+        );
 
-        this.jenisKerusakan = jenisKerusakan;
-    }
-
-    public String getJenisKerusakan() {
-        return jenisKerusakan;
-    }
-
-    public void setJenisKerusakan(String jenisKerusakan) {
         this.jenisKerusakan = jenisKerusakan;
     }
 
@@ -34,7 +31,8 @@ public class ServicePerbaikanAC extends ServiceAC {
 
             return hargaService;
 
-        } else if (jenisKerusakan.equalsIgnoreCase("Sedang")) {
+        } else if (
+                jenisKerusakan.equalsIgnoreCase("Sedang")) {
 
             return hargaService + 50000.0;
 
@@ -47,9 +45,24 @@ public class ServicePerbaikanAC extends ServiceAC {
     @Override
     public void tampilkanService() {
 
-        System.out.println("Jenis Service   : " + jenisService);
-        System.out.println("Jenis Kerusakan : " + jenisKerusakan);
-        System.out.println("Biaya Dasar     : Rp" + hargaService);
-        System.out.println("Total Biaya     : Rp" + hitungBiaya());
+        System.out.println(
+                "Jenis Service   : "
+                + jenisService
+        );
+
+        System.out.println(
+                "Harga Dasar     : Rp"
+                + hargaService
+        );
+
+        System.out.println(
+                "Jenis Kerusakan : "
+                + jenisKerusakan
+        );
+
+        System.out.println(
+                "Total Biaya     : Rp"
+                + hitungBiaya()
+        );
     }
 }

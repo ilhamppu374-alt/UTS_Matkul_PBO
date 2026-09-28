@@ -12,21 +12,16 @@ import java.util.ArrayList;
 
 public class DetailService {
 
-    // =========================
-    // ATRIBUT
-    // =========================
     private String idService;
     private String tanggalService;
     private String keluhan;
     private String status;
 
-    private static ArrayList<DetailService> daftarService
-            = new ArrayList<>();
-
-    public DetailService(String idService,
-                         String tanggalService,
-                         String keluhan,
-                         String status) {
+    public DetailService(
+            String idService,
+            String tanggalService,
+            String keluhan,
+            String status) {
 
         this.idService = idService;
         this.tanggalService = tanggalService;
@@ -50,7 +45,9 @@ public class DetailService {
         return status;
     }
 
-    public void setTanggalService(String tanggalService) {
+    public void setTanggalService(
+            String tanggalService) {
+
         this.tanggalService = tanggalService;
     }
 
@@ -62,68 +59,103 @@ public class DetailService {
         this.status = status;
     }
 
-    public static void tambahService(DetailService service) {
+    public static void tambahService(
+            ArrayList<DetailService> daftarService,
+            DetailService service) {
 
-        for (DetailService d : daftarService) {
+        for (DetailService s : daftarService) {
 
-            if (d.getIdService()
-                    .equalsIgnoreCase(service.getIdService())) {
+            if (s.getIdService()
+                    .equalsIgnoreCase(
+                            service.getIdService())) {
 
-                System.out.println("ID service sudah digunakan!");
+                System.out.println(
+                        "ID Service sudah digunakan!"
+                );
+
                 return;
             }
         }
 
         daftarService.add(service);
 
-        System.out.println("Data service berhasil ditambahkan!");
+        System.out.println(
+                "Data service berhasil ditambahkan."
+        );
     }
 
-    public static void tampilkanService() {
+    public static void tampilkanService(
+            ArrayList<DetailService> daftarService) {
 
         if (daftarService.isEmpty()) {
-            System.out.println("Belum ada data service.");
+
+            System.out.println(
+                    "Belum ada data service."
+            );
+
             return;
         }
 
-        System.out.println("\n========== DATA SERVICE AC ==========");
+        for (DetailService s : daftarService) {
 
-        int nomor = 1;
-
-        for (DetailService d : daftarService) {
-
-            System.out.println("\nService ke-" + nomor);
-            System.out.println("ID Service   : " + d.getIdService());
-            System.out.println("Tanggal      : " + d.getTanggalService());
-            System.out.println("Keluhan      : " + d.getKeluhan());
-            System.out.println("Status       : " + d.getStatus());
-
-            nomor++;
+            System.out.println("------------------------------");
+            System.out.println(
+                    "ID Service : "
+                    + s.getIdService()
+            );
+            System.out.println(
+                    "Tanggal    : "
+                    + s.getTanggalService()
+            );
+            System.out.println(
+                    "Keluhan    : "
+                    + s.getKeluhan()
+            );
+            System.out.println(
+                    "Status     : "
+                    + s.getStatus()
+            );
         }
+
+        System.out.println("------------------------------");
     }
 
     public static void ubahService(
-            String id) {
+            ArrayList<DetailService> daftarService,
+            String id,
+            String tanggalBaru,
+            String keluhanBaru,
+            String statusBaru) {
 
-        for (DetailService d : daftarService) {
+        for (DetailService s : daftarService) {
 
-            if (d.getIdService().equalsIgnoreCase(id)) {
-                String tanggalBaru;
+            if (s.getIdService()
+                    .equalsIgnoreCase(id)) {
 
-                String keluhanBaru;
-                String statusBaru;
+                s.setTanggalService(tanggalBaru);
+                s.setKeluhan(keluhanBaru);
+                s.setStatus(statusBaru);
 
-                System.out.println("Data service berhasil diubah!");
+                System.out.println(
+                        "Data service berhasil diubah."
+                );
+
                 return;
             }
         }
 
-        System.out.println("Data service tidak ditemukan.");
+        System.out.println(
+                "Data service tidak ditemukan."
+        );
     }
 
-    public static void hapusService(String id) {
+    public static void hapusService(
+            ArrayList<DetailService> daftarService,
+            String id) {
 
-        for (int i = 0; i < daftarService.size(); i++) {
+        for (int i = 0;
+                i < daftarService.size();
+                i++) {
 
             if (daftarService.get(i)
                     .getIdService()
@@ -131,11 +163,16 @@ public class DetailService {
 
                 daftarService.remove(i);
 
-                System.out.println("Data service berhasil dihapus!");
+                System.out.println(
+                        "Data service berhasil dihapus."
+                );
+
                 return;
             }
         }
 
-        System.out.println("Data service tidak ditemukan.");
+        System.out.println(
+                "Data service tidak ditemukan."
+        );
     }
 }

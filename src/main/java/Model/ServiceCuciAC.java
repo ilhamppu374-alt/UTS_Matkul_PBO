@@ -14,16 +14,11 @@ public class ServiceCuciAC extends ServiceAC {
 
     public ServiceCuciAC(int jumlahAC) {
 
-        super("Cuci AC", 75000.0);
+        super(
+                "Cuci AC",
+                75000.0
+        );
 
-        this.jumlahAC = jumlahAC;
-    }
-
-    public int getJumlahAC() {
-        return jumlahAC;
-    }
-
-    public void setJumlahAC(int jumlahAC) {
         this.jumlahAC = jumlahAC;
     }
 
@@ -36,9 +31,24 @@ public class ServiceCuciAC extends ServiceAC {
     @Override
     public void tampilkanService() {
 
-        System.out.println("Jenis Service : " + jenisService);
-        System.out.println("Jumlah AC     : " + jumlahAC);
-        System.out.println("Harga / AC    : Rp" + hargaService);
-        System.out.println("Total Biaya   : Rp" + hitungBiaya());
+        System.out.println(
+                "Jenis Service : "
+                + jenisService
+        );
+
+        System.out.println(
+                "Harga / AC    : Rp"
+                + hargaService
+        );
+
+        System.out.println(
+                "Jumlah AC     : "
+                + jumlahAC
+        );
+
+        System.out.println(
+                "Total Biaya   : Rp"
+                + hitungBiaya()
+        );
     }
 }

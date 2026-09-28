@@ -13,21 +13,28 @@ public class ServiceAC {
     protected String jenisService;
     protected double hargaService;
 
-    public ServiceAC(String jenisService, double hargaService) {
+    public ServiceAC(
+            String jenisService,
+            double hargaService) {
 
         this.jenisService = jenisService;
         this.hargaService = hargaService;
     }
 
     public double hitungBiaya() {
-
         return hargaService;
     }
 
     public void tampilkanService() {
 
-        System.out.println("Jenis Service : " + jenisService);
-        System.out.println("Harga Service : Rp" + hargaService);
+        System.out.println(
+                "Jenis Service : "
+                + jenisService
+        );
+
+        System.out.println(
+                "Harga Service : Rp"
+                + hargaService
+        );
     }
 }
-

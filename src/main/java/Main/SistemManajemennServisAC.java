@@ -1,7 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt
+ * to change this license
  */
-
 package Main;
 
 import Model.DetailService;
@@ -16,8 +16,7 @@ import java.util.ArrayList;
  *
  * @author USER
  */
-
-public class Main{
+public class SistemManajemennServisAC {
 
     public static void main(String[] args) {
 
@@ -25,6 +24,24 @@ public class Main{
 
         ArrayList<Pelanggan> daftarPelanggan = new ArrayList<>();
         ArrayList<DetailService> daftarService = new ArrayList<>();
+
+        daftarPelanggan.add(
+                new Pelanggan(
+                        "P001",
+                        "Andi",
+                        812345678,
+                        "Samarinda"
+                )
+        );
+
+        daftarService.add(
+                new DetailService(
+                        "S001",
+                        "28-09-2026",
+                        "AC tidak dingin",
+                        "Menunggu"
+                )
+        );
 
         int pilihan;
 
@@ -66,6 +83,8 @@ public class Main{
 
                         case 1:
 
+                            System.out.println("\n--- TAMBAH PELANGGAN ---");
+
                             System.out.print("ID Pelanggan : ");
                             String id = input.nextLine();
 
@@ -73,78 +92,96 @@ public class Main{
                             String nama = input.nextLine();
 
                             System.out.print("No. Telepon  : ");
-                            String telepon = input.nextLine();
+                            int noTelepon = input.nextInt();
+                            input.nextLine();
 
                             System.out.print("Alamat       : ");
                             String alamat = input.nextLine();
 
-                            Pelanggan.tambahPelanggan(
+                            Pelanggan pelangganBaru =
                                     new Pelanggan(
                                             id,
                                             nama,
-                                            telepon,
+                                            noTelepon,
                                             alamat
-                                    )
+                                    );
+
+                            Pelanggan.tambahPelanggan(
+                                    daftarPelanggan,
+                                    pelangganBaru
                             );
 
                             break;
 
                         case 2:
 
-                            Pelanggan.tampilkanPelanggan();
+                            System.out.println("\n--- DATA PELANGGAN ---");
+
+                            Pelanggan.tampilkanPelanggan(
+                                    daftarPelanggan
+                            );
 
                             break;
 
                         case 3:
 
+                            System.out.println("\n--- UBAH PELANGGAN ---");
+
                             System.out.print("Masukkan ID Pelanggan : ");
                             String idUbah = input.nextLine();
 
-                            System.out.print("Nama Baru : ");
+                            System.out.print("Nama Baru            : ");
                             String namaBaru = input.nextLine();
 
-                            System.out.print("No. Telepon Baru : ");
-                            String teleponBaru = input.nextLine();
+                            System.out.print("No. Telepon Baru     : ");
+                            int noTeleponBaru = input.nextInt();
+                            input.nextLine();
 
-                            System.out.print("Alamat Baru : ");
+                            System.out.print("Alamat Baru          : ");
                             String alamatBaru = input.nextLine();
 
-                            Pelanggan.ubahPelanggan(idUbah);
-
-                            System.out.println(
-                                    "Data baru yang dimasukkan: "
-                                    + namaBaru
-                                    + ", "
-                                    + teleponBaru
-                                    + ", "
-                                    + alamatBaru
+                            Pelanggan.ubahPelanggan(
+                                    daftarPelanggan,
+                                    idUbah,
+                                    namaBaru,
+                                    noTeleponBaru,
+                                    alamatBaru
                             );
 
                             break;
 
                         case 4:
 
+                            System.out.println("\n--- HAPUS PELANGGAN ---");
+
                             System.out.print("Masukkan ID Pelanggan : ");
                             String idHapus = input.nextLine();
 
-                            Pelanggan.hapusPelanggan(idHapus);
+                            Pelanggan.hapusPelanggan(
+                                    daftarPelanggan,
+                                    idHapus
+                            );
 
                             break;
 
                         case 5:
 
-                            System.out.println("Kembali ke menu utama.");
+                            System.out.println(
+                                    "Kembali ke menu utama."
+                            );
 
                             break;
 
                         default:
 
-                            System.out.println("Pilihan tidak tersedia.");
+                            System.out.println(
+                                    "Pilihan tidak tersedia."
+                            );
                     }
 
                 } while (menuPelanggan != 5);
             }
-       
+
             else if (pilihan == 2) {
 
                 int menuService;
@@ -168,52 +205,85 @@ public class Main{
 
                         case 1:
 
+                            System.out.println("\n--- TAMBAH SERVICE ---");
+
                             System.out.print("ID Service : ");
                             String idService = input.nextLine();
 
-                            System.out.print("Tanggal : ");
+                            System.out.print("Tanggal    : ");
                             String tanggal = input.nextLine();
 
-                            System.out.print("Keluhan : ");
+                            System.out.print("Keluhan    : ");
                             String keluhan = input.nextLine();
 
-                            System.out.print("Status : ");
+                            System.out.print("Status     : ");
                             String status = input.nextLine();
 
-                            DetailService.tambahService(
+                            DetailService serviceBaru =
                                     new DetailService(
                                             idService,
                                             tanggal,
                                             keluhan,
                                             status
-                                    )
+                                    );
+
+                            DetailService.tambahService(
+                                    daftarService,
+                                    serviceBaru
                             );
 
                             break;
 
                         case 2:
 
-                            DetailService.tampilkanService();
+                            System.out.println("\n--- DATA SERVICE ---");
+
+                            DetailService.tampilkanService(
+                                    daftarService
+                            );
 
                             break;
 
                         case 3:
 
+                            System.out.println("\n--- UBAH SERVICE ---");
+
                             System.out.print("Masukkan ID Service : ");
-                            String idUbahService = input.nextLine();
+                            String idUbahService =
+                                    input.nextLine();
+
+                            System.out.print("Tanggal Baru       : ");
+                            String tanggalBaru =
+                                    input.nextLine();
+
+                            System.out.print("Keluhan Baru       : ");
+                            String keluhanBaru =
+                                    input.nextLine();
+
+                            System.out.print("Status Baru        : ");
+                            String statusBaru =
+                                    input.nextLine();
 
                             DetailService.ubahService(
-                                    idUbahService
+                                    daftarService,
+                                    idUbahService,
+                                    tanggalBaru,
+                                    keluhanBaru,
+                                    statusBaru
                             );
 
                             break;
 
                         case 4:
 
+                            System.out.println("\n--- HAPUS SERVICE ---");
+
                             System.out.print("Masukkan ID Service : ");
-                            String idHapusService = input.nextLine();
+                            String idHapusService =
+                                    input.nextLine();
 
                             DetailService.hapusService(
+                                    daftarService,
                                     idHapusService
                             );
 
@@ -221,13 +291,17 @@ public class Main{
 
                         case 5:
 
-                            System.out.println("Kembali ke menu utama.");
+                            System.out.println(
+                                    "Kembali ke menu utama."
+                            );
 
                             break;
 
                         default:
 
-                            System.out.println("Pilihan tidak tersedia.");
+                            System.out.println(
+                                    "Pilihan tidak tersedia."
+                            );
                     }
 
                 } while (menuService != 5);
@@ -235,9 +309,19 @@ public class Main{
 
             else if (pilihan == 3) {
 
-                System.out.println("\n========== JENIS SERVICE ==========");
+                System.out.println(
+                        "\n=================================="
+                );
+                System.out.println(
+                        "       INFORMASI JENIS SERVICE"
+                );
+                System.out.println(
+                        "=================================="
+                );
 
-                ServiceAC cuci = new ServiceCuciAC(1);
+
+                ServiceAC cuci =
+                        new ServiceCuciAC(1);
 
                 ServiceAC perbaikan =
                         new ServicePerbaikanAC("Sedang");
@@ -255,12 +339,13 @@ public class Main{
                         "\nTerima kasih telah menggunakan "
                         + "Sistem Manajemen Jasa Service AC."
                 );
-
             }
 
             else {
 
-                System.out.println("\nPilihan tidak tersedia!");
+                System.out.println(
+                        "\nPilihan tidak tersedia!"
+                );
             }
 
         } while (pilihan != 4);
@@ -268,4 +353,3 @@ public class Main{
         input.close();
     }
 }
-
