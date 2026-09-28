@@ -298,38 +298,41 @@ Berikut merupakan dokumentasi tampilan Menu Informasi Jenis Service yang digunak
 
 <img width="507" height="442" alt="image" src="https://github.com/user-attachments/assets/b63840d8-2f1d-4c36-924c-dae03a6d15d4" />
 
-## <b>3. Implementasi Program</b>
+## <b>7. Implementasi Program</b>
 
-### <b>3.1 Implementasi Menu Kelola Data Pelanggan</b>
+### <b>7.1 Implementasi Menu Kelola Data Pelanggan</b>
 
 <p> Menu Kelola Data Pelanggan digunakan untuk mengelola data pelanggan yang menggunakan jasa servis AC. Pada menu ini terdapat fitur <b>Tambah Pelanggan</b>, <b>Lihat Pelanggan</b>, <b>Ubah Pelanggan</b>, dan <b>Hapus Pelanggan</b>. </p>
 
-<img width="327" height="638" alt="image" src="https://github.com/user-attachments/assets/1f38a0ac-95f2-4d3a-b4b4-d863182d3a91" />
- <img width="393" height="582" alt="image" src="https://github.com/user-attachments/assets/ce07223d-5239-4c97-826b-1b3e6c36ef8b" />
+<img width="398" height="821" alt="image" src="https://github.com/user-attachments/assets/62349d33-9a50-41a1-8b79-7bfc4f9ad2e9" />
+  <img width="395" height="787" alt="image" src="https://github.com/user-attachments/assets/b1220c22-d804-4bfe-b091-d83764fc7e58" />
+    <img width="422" height="537" alt="image" src="https://github.com/user-attachments/assets/95b34967-ce39-430d-8edf-d96e96bb28fd" />
 
 <p align="center">
   <b>Gambar 1. Implementasi Menu Data Pelanggan</b>
 </p>
 
-### <b>3.2 Implementasi Menu Kelola Data Service</b>
+### <b>7.2 Implementasi Menu Kelola Data Service</b>
 
 <p> Menu Data Service digunakan untuk mengelola data Service yang telah di input ke sistem/yang sedang diproses. Pengguna dapat menambahkan, melihat, mengubah, dan menghapus data service yang tersimpan dalam sistem. </p>
 
 <p align="center">
-<img width="398" height="821" alt="image" src="https://github.com/user-attachments/assets/62349d33-9a50-41a1-8b79-7bfc4f9ad2e9" />
-  <img width="276" height="386" alt="image" src="https://github.com/user-attachments/assets/5082c7ef-0a55-42f9-b618-9d7731780657" />
+<img width="395" height="742" alt="image" src="https://github.com/user-attachments/assets/fed2990d-f33c-4f65-a126-3fd7d346a28c" />
+<img width="516" height="773" alt="image" src="https://github.com/user-attachments/assets/96fdc955-750e-4ed0-a9fe-b675c9bc7bd4" />
+<img width="362" height="730" alt="image" src="https://github.com/user-attachments/assets/17d98048-de80-4ac9-bad5-18a075650eb3" />
+    <img width="328" height="353" alt="image" src="https://github.com/user-attachments/assets/bd69e775-99ca-4adf-a623-db6d2c082056" />
 </p>
 
 <p align="center">
   <b>Gambar 2. Implementasi Menu Data Teknisi</b>
 </p>
 
-### <b>3.3 Implementasi Menu Informasi Jenis Service </b>
+### <b>7.3 Implementasi Menu Informasi Jenis Service </b>
 
 <p> Menu Informasi Jenis Service digunakan untuk menampilkan data servis AC yang telah terinput ke dalam sistem / data service yang sedang di proses. Pada menu ini pengguna dapat meilhat seluruh isi dari informasi jenis service ac. </p>
 
 <p align="center">
-<img width="371" height="357" alt="image" src="https://github.com/user-attachments/assets/ac6925c0-e808-4de4-b54f-9889aa137a83" />
+<img width="413" height="507" alt="image" src="https://github.com/user-attachments/assets/2047b4bc-3c2a-4a59-ba14-4d3c39e4b672" />
 </p>
 
 <p align="center">
@@ -338,7 +341,7 @@ Berikut merupakan dokumentasi tampilan Menu Informasi Jenis Service yang digunak
 
 ---
 
-<b>8. Kesimpulan</b>
+## <b>8. Kesimpulan</b>
 
 Sistem Manajemen Jasa Service AC merupakan program console berbasis Java yang digunakan untuk mengelola data pelanggan dan data service AC.
 
