@@ -29,7 +29,7 @@ public class Pelanggan {
         this.alamat = alamat;
     }
 
-    // Getter
+    
     public String getIdPelanggan() {
         return idPelanggan;
     }
@@ -46,7 +46,6 @@ public class Pelanggan {
         return alamat;
     }
 
-    // Setter
     public void setNama(String nama) {
         this.nama = nama;
     }
@@ -84,9 +83,6 @@ public class Pelanggan {
         );
     }
 
-    // ==============================
-    // READ
-    // ==============================
     public static void tampilkanPelanggan(
             ArrayList<Pelanggan> daftarPelanggan) {
 
@@ -123,9 +119,6 @@ public class Pelanggan {
         System.out.println("------------------------------");
     }
 
-    // ==============================
-    // UPDATE
-    // ==============================
     public static void ubahPelanggan(
             ArrayList<Pelanggan> daftarPelanggan,
             String id,
